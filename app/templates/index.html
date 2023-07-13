@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import 'bootstrap4/form.html' as wtf %}
+
+{% block content %}
+    <h1>Welcome to PictureModifier!</h1>
+    <p>Please upload the picture you want modified.</p>
+    <form method="POST" action="" enctype="multipart/form-data" accept="image/*"">
+      <p><input type="file" name="file"></p>
+      <p><input type="number" name="image_size_y"> x <input type="number" name="image_size_x"></p>
+      <p><input type="submit" value="Submit"></p>
+    </form>
+{% endblock %}}
