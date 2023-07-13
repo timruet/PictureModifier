@@ -21,7 +21,7 @@ def index():
                 abort(400)
             uploaded_file.save(os.path.join(app.config['UPLOAD_PATH'], filename))
             img = Image.open(f'uploads/{filename}') # Open image
-            img = img.resize((int(image_size_y), int(image_size_x)), Image.ANTIALIAS) # Resize image
+            img = img.resize((int(image_size_y), int(image_size_x)), Image.LANCZOS) # Resize image
             img.save(os.path.join(app.config['UPLOAD_PATH'], filename))
             directory=os.path.join(basedir, app.config['UPLOAD_PATH'])
             return send_from_directory(directory=directory, path=filename, as_attachment=True)
